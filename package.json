@@ -1,0 +1,27 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "weather app",
+  "main": "app.js",
+  "dependencies": {
+    "pkg.json": "^2.0.8"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skhulu95/weatherApp.git"
+  },
+  "author": "thabiso klip",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skhulu95/weatherApp/issues"
+  },
+  "homepage": "https://Skhulu95.github.io/weatherApp"
+}
