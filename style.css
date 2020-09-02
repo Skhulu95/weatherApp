@@ -116,3 +116,15 @@ body{
     font-size: 0.8em;
 }
 
+.texttype{
+    /* width: 300px;
+    height: 260px; */
+    background-color: #F4F9FF;
+    color: whitesmoke;
+	background: url(./img/background2.jpg) center/cover fixed no-repeat;
+	flex-wrap: wrap;
+}
+
+.text{
+    font-family: 'Aclonica';font-size: 22px;
+}
