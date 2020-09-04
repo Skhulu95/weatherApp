@@ -49,19 +49,29 @@ function getWeather(latitude, longitude){
         .then(function(response){
             let data = response.json();
             return data;
+               
         })
-        .then(function(data){
+        
+        .then(function(data){console.log(data)
             weather.temperature.value = Math.floor(data.main.temp - KELVIN);
             weather.description = data.weather[0].description;
             weather.iconId = data.weather[0].icon;
             weather.city = data.name;
             weather.country = data.sys.country;
         })
+        
         .then(function(){
             displayWeather();
-            typeWriter();
         });
+        
 }
+
+// CURRENT TIME
+function myFunction() {
+    var d = new Date();
+    d.setTime(-1332403882588);
+    
+  }
 
 // DISPLAY WEATHER TO UI
 function displayWeather(){
@@ -69,18 +79,7 @@ function displayWeather(){
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-}
-
-var i = 0;
-var txt = 'Would you bet your paycheck on a weather forecast for tomorrow? If not, then why should this country bet billions on global warming predictions that have even less foundation? Thomas Sowell';
-var speed = 50;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+   
 }
 
 // C to F conversion
@@ -121,10 +120,6 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="count"
-  document.getElementById("count").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {

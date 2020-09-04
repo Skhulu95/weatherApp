@@ -8,7 +8,14 @@
 </head>
 <body>
     <div class="text">
-        <h1><p id="count"></p></h1>
+        <h1>Last updated:</h1>
+        <h3><p id="date"></p></h3>
+        <script>
+              var d = new Date();
+              Math.floor(Date.now() / 1000)
+              document.getElementById("date").innerHTML = d;
+            
+            </script>
     </div>
     <div class="container">
         <div class="app-title">
@@ -32,10 +39,24 @@
         </div>
     </div>
     <div class="texttype">
-        <p id="demo"></p>
+        <p id="type"></p>
+        <script>
+            var i = 0;
+var txt = 'Would you bet your paycheck on a weather forecast for tomorrow? If not, then why should this country bet billions on global warming predictions that have even less foundation? Thomas Sowell';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+typeWriter();
+        </script>
+        
     </div>
     <script src="app.js"></script>
-    <script src="typewritter.js"></script>
 </body>
 </html>
 
